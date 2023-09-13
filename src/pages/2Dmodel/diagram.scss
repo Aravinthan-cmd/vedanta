@@ -1,0 +1,301 @@
+.container-diagram {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .outer-frame {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        .sidebar-frame-left {
+            width: 20px;
+            height: 300px;
+            position: absolute;
+            background-color: black;
+            left: -20px;
+            border-radius: 10px 0 0 10px;
+        }
+        .sidebar-frame-right {
+            width: 20px;
+            height: 300px;
+            position: absolute;
+            background-color: black;
+            right: -20px;
+            border-radius: 0 15px 10px 0;
+        }
+
+        .frame {
+            width: auto;
+            height: 300px;
+            background-color: rgb(131, 39, 39);
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+            padding-right: 15px;
+            gap: 40px;
+    
+            .container1 {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                
+                .bg {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 4px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    position: relative;
+    
+                    .line-left{
+                        width: 1px;
+                        height: 40px;
+                        background-color: black;
+                        position: absolute;
+                        top: -40px;
+                        left: 0;
+                    }
+                    .left {
+                        width: 6px;
+                        height: 130px;
+                        background-color: black;
+    
+                        .bar1 {
+                            width: 6px;
+                            height: 25px;
+                            background-color: aqua;
+                            position: absolute;
+                            top: -25px;
+
+                            .popup {
+                                display: none;
+                                position: relative;
+
+                                .stick {
+                                    height: 100px;
+                                    width: 2px;
+                                    background: white;
+                                    border-top-left-radius: 10px;
+                                    border-bottom-left-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                    position: absolute;
+                                    top: -100px;
+                                }
+                                .flag {
+                                    width: 140px;
+                                    height: 80px;
+                                    background-color: white;
+                                    position: absolute;
+                                    top: -130px;
+                                    right: 1px;
+                                    color: black;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                        .bar1:hover {
+                            .popup {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .right {
+                        width: 6px;
+                        height: 130px;
+                        background-color: black;
+                        .bar2 {
+                            width: 6px;
+                            height: 25px;
+                            // background-color: aqua;
+                            position: absolute;
+                            top: -25px;
+
+                            .popup {
+                                display: none;
+                                position: relative;
+
+                                .stick {
+                                    height: 100px;
+                                    width: 2px;
+                                    background: white;
+                                    border-top-left-radius: 10px;
+                                    border-bottom-left-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                    position: absolute;
+                                    top: -100px;
+                                }
+                                .flag {
+                                    width: 140px;
+                                    height: 80px;
+                                    background-color: white;
+                                    position: absolute;
+                                    top: -130px;
+                                    left: 3px;
+                                    color: black;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                        .bar2:hover {
+                            .popup {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .line{
+                    width: 1px;
+                    height: 40px;
+                    background-color: black;
+                    position: absolute;
+                    top: -40px;
+                    left: 970px;
+                }
+            }
+    
+            .container2 {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                
+                .bg {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 4px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    position: relative;
+    
+                    .line-left{
+                        width: 1px;
+                        height: 40px;
+                        background-color: black;
+                        position: absolute;
+                        bottom: -40px;
+                        left: 0;
+                    }
+                    .left {
+                        width: 6px;
+                        height: 130px;
+                        background-color: black;
+    
+                        .bar1 {
+                            width: 6px;
+                            height: 25px;
+                            // background-color: aqua;
+                            position: absolute;
+                            bottom: -25px;
+
+                            .popup {
+                                display: none;
+                                position: relative;
+
+                                .stick {
+                                    height: 100px;
+                                    width: 2px;
+                                    background: white;
+                                    border-top-left-radius: 10px;
+                                    border-bottom-left-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                    position: absolute;
+                                    top: 1px;
+                                }
+                                .flag {
+                                    width: 140px;
+                                    height: 80px;
+                                    background-color: white;
+                                    position: absolute;
+                                    top: 40px;
+                                    right: 1px;
+                                    color: black;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                        .bar1:hover {
+                            .popup {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .right {
+                        width: 6px;
+                        height: 130px;
+                        background-color: black;
+                        .bar2 {
+                            width: 6px;
+                            height: 25px;
+                            // background-color: aqua;
+                            position: absolute;
+                            bottom: -25px;
+
+                            .popup {
+                                display: none;
+                                position: relative;
+
+                                .stick {
+                                    height: 100px;
+                                    width: 2px;
+                                    background: white;
+                                    border-top-left-radius: 10px;
+                                    border-bottom-left-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                    position: absolute;
+                                    top: 1px;
+                                }
+                                .flag {
+                                    width: 140px;
+                                    height: 80px;
+                                    background-color: white;
+                                    position: absolute;
+                                    top: 40px;
+                                    left: 3px;
+                                    color: black;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                        .bar2:hover {
+                            .popup {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .line{
+                    width: 1px;
+                    height: 40px;
+                    background-color: black;
+                    position: absolute;
+                    bottom: -40px;
+                    left: 970px;
+                }
+            }
+        }
+    }
+}
