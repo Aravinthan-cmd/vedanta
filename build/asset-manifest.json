@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b0e0ed17.css",
-    "main.js": "/static/js/main.0ad1a1e8.js",
+    "main.js": "/static/js/main.6811362f.js",
     "static/media/boxicons.svg": "/static/media/boxicons.f80cc694af79b88fde78.svg",
     "static/media/boxicons.eot": "/static/media/boxicons.dfc882ec9689f820c7c9.eot",
     "static/media/boxicons.woff": "/static/media/boxicons.1a7e2e2bf3a855e674d4.woff",
@@ -11,10 +11,10 @@
     "static/media/Vedanta-Logo-PNG.png": "/static/media/Vedanta-Logo-PNG.b84681b8f97e3a43e5e5.png",
     "index.html": "/index.html",
     "main.b0e0ed17.css.map": "/static/css/main.b0e0ed17.css.map",
-    "main.0ad1a1e8.js.map": "/static/js/main.0ad1a1e8.js.map"
+    "main.6811362f.js.map": "/static/js/main.6811362f.js.map"
   },
   "entrypoints": [
     "static/css/main.b0e0ed17.css",
-    "static/js/main.0ad1a1e8.js"
+    "static/js/main.6811362f.js"
   ]
 }
