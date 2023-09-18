@@ -15,7 +15,7 @@ const Reports = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77:4000/sensor/find");
+        const response = await fetch("http://52.66.175.77/sensor/find");
         const infoVal = await response.json();
         setInfoReport(infoVal);
       } catch (error) {

@@ -26,7 +26,7 @@ const Diagram = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77:4000/sensor/updated");
+        const response = await fetch("http://52.66.175.77/sensor/updated");
         const infoVal = await response.json();
         setInfoDiagram(infoVal);
       } catch (error) {

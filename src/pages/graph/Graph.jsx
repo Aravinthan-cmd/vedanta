@@ -26,7 +26,7 @@ const Graph = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77:4000/sensor/updated");
+        const response = await fetch("http://52.66.175.77/sensor/updated");
         const infoVal = await response.json();
         setInfoGraph(infoVal);
       } catch (error) {
@@ -69,9 +69,21 @@ const Graph = () => {
       const createOrUpdateChart = () => {
         const DataGraph = graphData.splice(0,100)
         const DataGraphUpdate = graphUpdateData.slice(0,100)
+
+        var formattedDates = DataGraphUpdate.map(function(dateString) {
+          const dateObj = new Date(dateString);
+          const year = dateObj.getUTCFullYear();
+          const month = dateObj.getUTCMonth() + 1; // Add 1 to month since it's zero-based
+          const day = dateObj.getUTCDate();
+          const hours = dateObj.getUTCHours();
+          const minutes = dateObj.getUTCMinutes();
+        
+          return `${year}-${month}-${day},${hours}:${minutes}`;
+        });
+
         // Sample data for the Line Chart
         const data = {
-          labels: DataGraphUpdate,
+          labels: formattedDates,
           datasets: [
             {
               label: `Peak ${updateName}`,
@@ -129,7 +141,7 @@ const Graph = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch("http://52.66.175.77:4000/sensor/find");
+          const response = await fetch("http://52.66.175.77/sensor/find");
           const infoVal = await response.json();
           setInfoFind(infoVal);
         } catch (error) {

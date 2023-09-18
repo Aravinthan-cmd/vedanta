@@ -32,7 +32,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77:4000/sensor/find");
+        const response = await fetch("http://52.66.175.77/sensor/find");
         const infoVal = await response.json();
         setInfoChart(infoVal);
         setInfo(infoVal)
@@ -91,6 +91,11 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
     return null; // Handle invalid index gracefully
   });
   
+  var time = [];
+  for (let index = 0; index < info.length; index++) {
+     time = info[index].updatedAt;
+  }
+  console.log(time);
 
   const data = {
     labels: info.map(entry => entry.updatedAt).slice(0, 500),
