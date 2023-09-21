@@ -39,7 +39,7 @@ const Graph = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, []);    
 
   useEffect(() => {
     const sensorArray = [];
@@ -67,23 +67,12 @@ const Graph = () => {
     
       // Function to create or update the chart
       const createOrUpdateChart = () => {
-        const DataGraph = graphData.splice(0,100)
-        const DataGraphUpdate = graphUpdateData.slice(0,100)
-
-        var formattedDates = DataGraphUpdate.map(function(dateString) {
-          const dateObj = new Date(dateString);
-          const year = dateObj.getUTCFullYear();
-          const month = dateObj.getUTCMonth() + 1; // Add 1 to month since it's zero-based
-          const day = dateObj.getUTCDate();
-          const hours = dateObj.getUTCHours();
-          const minutes = dateObj.getUTCMinutes();
-        
-          return `${year}-${month}-${day},${hours}:${minutes}`;
-        });
+        const DataGraph = graphData.splice(-100)
+        const DataGraphUpdate = graphUpdateData.slice(-100);  
 
         // Sample data for the Line Chart
         const data = {
-          labels: formattedDates,
+          labels: DataGraphUpdate,
           datasets: [
             {
               label: `Peak ${updateName}`,
@@ -160,16 +149,18 @@ const Graph = () => {
     
     useEffect(() => {
       const peakArray = [];
-      const updateTime = [];
+      var updateTime = [];
       for (let index = 0; index < infoFind.length; index++) {
         if (peakName !== undefined || null) {
           peakArray[index] = infoFind[index]?.[peakName];
-          updateTime[index] = infoFind[index]?.updatedAt;
+          updateTime[index] = infoFind[index]?.time;
         }
       }
       setGraphData(peakArray);
-      setGraphUpdateData(updateTime);
+      setGraphUpdateData(updateTime);          // reverse
     }, [infoFind, peakName]);
+
+    console.log(graphUpdateData);
     
   if (error) {
     return <div>Error: {error.message}</div>;

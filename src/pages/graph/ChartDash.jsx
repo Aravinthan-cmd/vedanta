@@ -13,7 +13,7 @@ const generateData = (inforeport, startSensorIndex, endSensorIndex) => {
           id: `${i}`,
           sensor: `sensor${i}`,
           sensorName: `CBT${i}`,
-          updatedAt: inforeport[index]?.updatedAt,
+          updatedAt: inforeport[index]?.time,
         });
       }
     }
@@ -90,15 +90,14 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
     }
     return null; // Handle invalid index gracefully
   });
-  
-  var time = [];
+
+  var time = [];                                        // for chart time
   for (let index = 0; index < info.length; index++) {
-     time = info[index].updatedAt;
+    time[index] = info[index]?.time; 
   }
-  console.log(time);
 
   const data = {
-    labels: info.map(entry => entry.updatedAt).slice(0, 500),
+    labels: time.slice(0, 500),
     datasets,
   };
 

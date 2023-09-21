@@ -23,7 +23,7 @@ const generateData = (inforeport, startSensorIndex, endSensorIndex) => {
         id: `${i}`,
         sensor: `Sensor ${i}`,
         sensorName: `CBT ${i}`,
-        updatedAt: inforeport[index]?.updatedAt,
+        updatedAt: inforeport[index]?.time,
       });
       }
     }
@@ -74,7 +74,7 @@ const ReportPopup = ({ Openreportdash, Closereportdash, waveGuide }) => {
 
     for (let index = 0; index < inforeport.length; index++) {
       sensorData[index] = inforeport[index]?.[sensorName];
-      updateTime[index] = inforeport[index]?.updatedAt;
+      updateTime[index] = inforeport[index]?.time;
     }
     return { sensorData, updateTime };
   };
@@ -192,6 +192,6 @@ const ReportPopup = ({ Openreportdash, Closereportdash, waveGuide }) => {
       
     </>
   );
-};
+}
 
 export default ReportPopup;

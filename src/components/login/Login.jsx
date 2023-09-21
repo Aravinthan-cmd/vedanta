@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../../assets/images/xyma.png';
+import logo from '../../assets/images/xyma_logo.png';
+import '../login/login.scss'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -19,7 +20,7 @@ function Login() {
       }),
     })
 
-    const data = await response.json()
+    const data = await response.json();
 
     if (data.user) {
       localStorage.setItem('token', data.user)
@@ -32,12 +33,16 @@ function Login() {
 
   return (
     <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
+      <div className="background">
+        <img src='https://images.moneycontrol.com/static-mcnews/2023/09/Vedanta.jpg' alt='bg'/>
+      </div>
+      <div className="foreground">
       <div className="md:w-1/3 max-w-sm">
         <img
-          src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          src="https://d1rbiogke1jwo5.cloudfront.net/wp-content/uploads/2021/12/Vedanta-Logo-PNG.png"
           alt="Sample" />
       </div>
-      <div className="md:w-1/3 max-w-sm">
+      <div className="md:w-1/3 max-w-sm form_login">
         <form onSubmit={loginUser}>
         <div className='flex item-center justify-center pb-8 pr-8'>
         <img src={logo} alt="logo" style={{width : '14rem',height : '7rem'}}/>
@@ -66,6 +71,7 @@ function Login() {
         {/* <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
           Don't have an account? <a className="text-red-600 hover:underline hover:underline-offset-4" href="#">Register</a>
         </div> */}
+      </div>
       </div>
     </section>
   );

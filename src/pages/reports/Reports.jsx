@@ -71,12 +71,9 @@ const Reports = () => {
   XLSX.writeFile(workbook, "xyma_vedanta.xlsx");
 };
 
-
   const handleWaveGuideClick = (waveGuideNumber) => {
     setSelectedWaveGuide(waveGuideNumber);
   };
-
-  console.log(infoReport)
 
   return (
     <div className="report">
