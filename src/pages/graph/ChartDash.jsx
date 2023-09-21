@@ -81,7 +81,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
       const selectedSensorId = item ? item.id : "";
       return {
         label: `CBT${selectedSensorId}`,
-        data: infoChart.map(entry => entry[item?.sensor] || null).slice(0, 500),
+        data: infoChart.map(entry => entry[item?.sensor] || null).slice(-400),
         fill: false,
         borderColor: borderColors[index % borderColors.length],
         backgroundColor: borderColors[index % borderColors.length],
