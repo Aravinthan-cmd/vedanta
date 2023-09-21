@@ -97,7 +97,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
   }
 
   const data = {
-    labels: time.slice(0, 500),
+    labels: time.slice(-400),
     datasets,
   };
 
