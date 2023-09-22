@@ -40,7 +40,14 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
         setError(error);
       }
     };
-    fetchData();
+
+    const interval = setInterval(() => {
+      fetchData();
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+
   }, []);
   
   const clearSelection = () => {
