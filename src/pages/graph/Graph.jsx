@@ -26,7 +26,7 @@ const Graph = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/updated");
+        const response = await fetch("http://52.66.175.77/sensor/initial");
         const infoVal = await response.json();
         setInfoGraph(infoVal);
       } catch (error) {
@@ -130,7 +130,7 @@ const Graph = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch("http://52.66.175.77/sensor/find");
+          const response = await fetch("http://52.66.175.77/sensor/initial");
           const infoVal = await response.json();
           setInfoFind(infoVal);
         } catch (error) {
