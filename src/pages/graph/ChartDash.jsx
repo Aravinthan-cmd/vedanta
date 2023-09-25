@@ -34,9 +34,9 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
       try {
         const response = await fetch("http://52.66.175.77/sensor/initial");
         const infoVal = await response.json();
-        const reverse_infoVal = infoVal.reverse()
+        const reverse_infoVal = infoVal.reverse();
         setInfoChart(reverse_infoVal);
-        setInfo(reverse_infoVal)
+        setInfo(reverse_infoVal);
       } catch (error) {
         setError(error);
       }
