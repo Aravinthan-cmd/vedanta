@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './sidebar.scss';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../assets/images/Vedanta-Logo-PNG.png';
+import logo from '../../assets/images/vedanta_balco-removebg.png';
 import logopower from '../../assets/images/xyma.png';
 import sidebarNav from '../../configs/sidebarNav';
 

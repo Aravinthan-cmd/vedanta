@@ -35,7 +35,7 @@ const Graph = () => {
     };
     const interval = setInterval(() => {
       fetchData();
-    }, 1000);
+    }, 3000);
     return () => {
       clearInterval(interval);
     };
@@ -62,7 +62,7 @@ const Graph = () => {
       let peakNameChart = peakName;
       var updateName;
       if (peakNameChart) {
-        updateName = peakNameChart.replace("sensor", "CBT");
+        updateName = peakNameChart.replace("sensor", "Sensor");
       }
     
       // Function to create or update the chart
@@ -159,8 +159,6 @@ const Graph = () => {
       setGraphData(peakArray);
       setGraphUpdateData(updateTime);          // reverse
     }, [infoFind, peakName]);
-
-    console.log(graphUpdateData);
     
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -211,46 +209,46 @@ const Graph = () => {
       
       <div className="box">
         <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(1)}}>
-          <h1>waveGuide 1</h1>
-          <span className="text-sm">(CBT1-CBT10)</span>
+          <h1>B Side</h1>
+          <span className="text-sm">(CBT23-CBT26)</span>
         </div>
         <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(2)}}>
-          <h1>waveGuide 2</h1>
-          <span className="text-sm">(CBT11-CBT20)</span>
+          <h1>A Side</h1>
+          <span className="text-sm">(CBT23-CBT26)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(3)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(3)}}>
           <h1>waveGuide 3</h1>
           <span className="text-sm">(CBT21-CBT30)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(4)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(4)}}>
           <h1>waveGuide 4</h1>
           <span className="text-sm">(CBT31-CBT40)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(5)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(5)}}>
           <h1>waveGuide 5</h1>
           <span className="text-sm">(CBT41-CBT50)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(6)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(6)}}>
           <h1>waveGuide 6</h1>
           <span className="text-sm">(CBT51-CBT60)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(7)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(7)}}>
           <h1>waveGuide 7</h1>
           <span className="text-sm">(CBT61-CBT70)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(8)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(8)}}>
           <h1>waveGuide 8</h1>
           <span className="text-sm">(CBT71-CBT80)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(9)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(9)}}>
           <h1>waveGuide 9</h1>
           <span className="text-sm">(CBT81-CBT90)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(10)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(10)}}>
           <h1>waveGuide 10</h1>
           <span className="text-sm">(CBT91-CBT100)</span>
         </div>
-        <div className="box-chart" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(11)}}>
+        <div className="box-chart hide" onClick={()=>{setIsOpengraph(true); handleWaveGuideClickChart(11)}}>
           <h1>waveGuide 11</h1>
           <span className="text-sm">(CBT101-CBT108)</span>
         </div>

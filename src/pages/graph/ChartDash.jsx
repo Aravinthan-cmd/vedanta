@@ -12,7 +12,7 @@ const generateData = (inforeport, startSensorIndex, endSensorIndex) => {
         data.push({
           id: `${i}`,
           sensor: `sensor${i}`,
-          sensorName: `CBT${i}`,
+          sensorName: `Sensor${i}`,
           updatedAt: inforeport[index]?.time,
         });
       }
@@ -127,8 +127,6 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
       setSelectedSensorIndexes(prevIndexes => [...prevIndexes, index]);
     }
   };
-
-  console.log(infoChart.length);
 
   return (
     <>

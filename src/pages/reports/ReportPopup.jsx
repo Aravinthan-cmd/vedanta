@@ -22,7 +22,7 @@ const generateData = (inforeport, startSensorIndex, endSensorIndex) => {
         data.push({
         id: `${i}`,
         sensor: `Sensor ${i}`,
-        sensorName: `CBT ${i}`,
+        sensorName: `Sensor ${i}`,
         updatedAt: inforeport[index]?.time,
       });
       }

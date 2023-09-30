@@ -39,7 +39,7 @@ const Dashboard = () => {
   const nonActivelist = [];
   for (let index = 1; index <= 108; index++) {
     const sensor = `sensor${index}`;
-    const sensorName = `CBT${index}`;
+    const sensorName = `Sensor${index}`;
     const val = info[0]?.[sensor];
     sensorArray.push({sensor, sensorName, val});
     if(val === 0) {
@@ -71,8 +71,8 @@ const Dashboard = () => {
             handleWaveGuideClick(1);
           }}
         >
-          <h3>waveGuide 1</h3>
-          <span className="text-sm">(CBT1-CBT10)</span>
+          <h3>B Side</h3>
+          <span className="text-sm">(CBT23-CBT26)</span>
         </div>
         <div
           className="box"
@@ -81,11 +81,11 @@ const Dashboard = () => {
             handleWaveGuideClick(2);
           }}
         >
-          <h3>waveGuide 2</h3>
-          <span className="text-sm">(CBT11-CBT20)</span>
+          <h3>A Side</h3>
+          <span className="text-sm">(CBT23-CBT26)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(3);
@@ -95,7 +95,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT21-CBT30)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(4);
@@ -105,7 +105,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT31-CBT40)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(5);
@@ -115,7 +115,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT41-CBT50)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(6);
@@ -125,7 +125,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT51-CBT60)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(7);
@@ -135,7 +135,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT61-CBT70)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(8);
@@ -145,7 +145,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT71-CBT80)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(9);
@@ -155,7 +155,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT81-CBT90)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(10);
@@ -165,7 +165,7 @@ const Dashboard = () => {
           <span className="text-sm">(CBT91-CBT100)</span>
         </div>
         <div
-          className="box"
+          className="box hide"
           onClick={() => {
             setIsOpen(true);
             handleWaveGuideClick(11);

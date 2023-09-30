@@ -10,7 +10,7 @@ const generateDemoData = (info, startSensorIndex, endSensorIndex) => {
       if (i <= 108) {
         data.push({
           id: `${i}`,
-          sensor: `CBT ${i}`,
+          sensor: `Sensor ${i}`,
           value: `${info[index][`sensor${i}`]} °c`,
           updatedAt: info[index]?.updatedAt,
         });

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/xyma_logo.png';
+import vedanta_logo from '../../assets/images/vedanta_balco-removebg.png'
 import '../login/login.scss'
 
 function Login() {
@@ -38,9 +39,7 @@ function Login() {
       </div>
       <div className="foreground">
       <div className="md:w-1/3 max-w-sm">
-        <img
-          src="https://d1rbiogke1jwo5.cloudfront.net/wp-content/uploads/2021/12/Vedanta-Logo-PNG.png"
-          alt="Sample" />
+        <img src={vedanta_logo} alt="Sample" />
       </div>
       <div className="md:w-1/3 max-w-sm form_login">
         <form onSubmit={loginUser}>
