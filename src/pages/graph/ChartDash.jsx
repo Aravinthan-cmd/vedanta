@@ -132,7 +132,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
     <>
       <div className="overlay-graph-dash" onClick={clearSelection} />
 
-      {(infoChart !== 0) ? (
+      {infoChart.length !== 0 ? (
         <div className="chartdash">
         <div className="chart">
           <div className="btn">
@@ -165,7 +165,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
             <div class="inner three"></div>
           </div>
         </div>
-      )}
+      ) }
       
     </>
   );
