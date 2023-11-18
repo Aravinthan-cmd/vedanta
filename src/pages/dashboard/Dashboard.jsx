@@ -15,7 +15,6 @@ const Dashboard = () => {
   const [nonActive, setNonActive] = useState([]);
 
   useEffect(() => {
-    
     const fetchData = async () => {
       try {
         const response = await fetch('https://vedanta.xyma.live/sensor/updated');

@@ -30,7 +30,7 @@ const PopupDashboard = ({ open_dash, onClose, waveGuide }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://52.66.175.77/sensor/updated"
+          "https://vedanta.xyma.live/sensor/updated"
         );
         const infoVal = await response.json();
         setInfo(infoVal);
