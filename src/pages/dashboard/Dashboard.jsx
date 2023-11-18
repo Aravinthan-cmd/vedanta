@@ -18,7 +18,7 @@ const Dashboard = () => {
     
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/updated");
+        const response = await fetch('https://vedanta.xyma.live/sensor/updated');
         const infoVal = await response.json();
         setInfo(infoVal);
       } catch (error) {
@@ -30,8 +30,7 @@ const Dashboard = () => {
     }, 1000);
     return () => {
       clearInterval(interval);
-    };
-    
+    }; 
   }, []);
 
   useEffect(() => {

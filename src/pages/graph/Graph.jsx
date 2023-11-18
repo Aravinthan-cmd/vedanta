@@ -26,7 +26,7 @@ const Graph = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/initial");
+        const response = await fetch("https://vedanta.xyma.live/sensor//initial");
         const infoVal = await response.json();
         setInfoGraph(infoVal);
       } catch (error) {
@@ -90,7 +90,9 @@ const Graph = () => {
           maintainAspectRatio: false,
           scales: {
             y: {
-              beginAtZero: true,
+              // beginAtZero: true,
+              min: 100,
+              max: 300,
             },
           },
         };
@@ -130,7 +132,7 @@ const Graph = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch("http://52.66.175.77/sensor/initial");
+          const response = await fetch("https://vedanta.xyma.live/sensor//initial");
           const infoVal = await response.json();
           setInfoFind(infoVal);
         } catch (error) {

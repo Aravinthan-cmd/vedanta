@@ -15,7 +15,7 @@ const Reports = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/find");
+        const response = await fetch("https://vedanta.xyma.live/sensor/find");
         const infoVal = await response.json();
         setInfoReport(infoVal);
       } catch (error) {
@@ -54,24 +54,47 @@ const Reports = () => {
       .map(([key, value]) => ({ name: key, value }));
     return sensorValues;
   });
-
+  console.log(infoReport)
   var sensorNameXl = [];
   for (let index = 1; index <= 108; index++) {
        sensorNameXl[index] = `Sensor ${index}`;
+  }
+  var time = [];
+  for (let index = 0; index < infoReport.length; index++) {
+    time[index] = infoReport[index]?.time;
   }
 
   const generateExcel = () => {
   const workbook = XLSX.utils.book_new();
   const data = [
-    [...sensorNameXl.map((sensor) => [sensor]).slice(1)],
+    [ ...sensorNameXl.map((sensor) => [sensor]).slice(1)],
     ...sensorData.map((sensorDataExcel) =>
       sensorDataExcel.map((sensor) => sensor.value)
     ),
+    ["Timestamp"],
+    ...time.map((timestamp) => [timestamp]),
   ];
   const worksheet = XLSX.utils.aoa_to_sheet(data);
   XLSX.utils.book_append_sheet(workbook, worksheet, "sheet1");
   XLSX.writeFile(workbook, "xyma_vedanta.xlsx");
 };
+
+// const generateExcel = () => {
+//   const workbook = XLSX.utils.book_new();
+//   // Combine Timestamp and sensorNameXl for the first row
+//   const headerRow = [...sensorNameXl.map((sensor) => [sensor]), "Timestamp"];
+
+//   // Combine timestamp and sensor data for each row
+//   const dataRows = time.map((timestamp, index) => [
+//     ...sensorData.map((sensorDataExcel) => sensorDataExcel[index]?.value),
+//     timestamp,
+//   ]);
+
+//   const data = [headerRow, ...dataRows];
+//   const worksheet = XLSX.utils.aoa_to_sheet(data);
+//   XLSX.utils.book_append_sheet(workbook, worksheet, "sheet1");
+//   XLSX.writeFile(workbook, "xyma_vedanta.xlsx");
+// };
 
   const handleWaveGuideClick = (waveGuideNumber) => {
     setSelectedWaveGuide(waveGuideNumber);

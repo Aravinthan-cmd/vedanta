@@ -32,7 +32,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/initial");
+        const response = await fetch("https://vedanta.xyma.live/sensor//initial");
         const infoVal = await response.json();
         const reverse_infoVal = infoVal.reverse();
         setInfoChart(reverse_infoVal);
@@ -86,7 +86,7 @@ const ChartDash = ({ openGraph, closeGraph, waveGuideSelected }) => {
       const item = chartData[index];
       const selectedSensorId = item ? item.id : "";
       return {
-        label: `CBT${selectedSensorId}`,
+        label: `Sensor ${selectedSensorId}`,
         data: infoChart.map(entry => entry[item?.sensor] || null).slice(-400),
         fill: false,
         borderColor: borderColors[index % borderColors.length],

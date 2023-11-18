@@ -39,7 +39,7 @@ const ReportPopup = ({ Openreportdash, Closereportdash, waveGuide }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://52.66.175.77/sensor/find");
+        const response = await fetch("https://vedanta.xyma.live/sensor/find");
         const infoVal = await response.json();
         setInforeport(infoVal);
       } catch (error) {
